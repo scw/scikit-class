@@ -7,6 +7,9 @@ text = df['tweet_text']
 
 from sklearn.feature_extraction.text import CountVectorizer
 count_vect = CountVectorizer()
+
+# NOTE: this is broken, will throw an error from line 7 (no data)
+#       Instead, use feature_extraction_2.py
 count_vect.fit(text)
 
 print count_vect.vocabulary_.get(u'3g')
