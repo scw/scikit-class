@@ -17,5 +17,9 @@ p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 2))),
                 ('multinomialnb', MultinomialNB())])
 
 p.fit(fixed_text, fixed_target)
+# named steps gets out '..' from the data, check if 'garage sale' shows up in
+# our word list
 print p.named_steps['counts'].vocabulary_.get(u'garage sale')
+
+# these are all the pairs (bi-grams) in the data:
 print len(p.named_steps['counts'].vocabulary_)

@@ -15,6 +15,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 
+# take an extra step, of selecting a feature, to limit the scope of the inputs.
+# this shortens the runtime, and [...]
 p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 2))),
                 ('feature_selection', SelectKBest(chi2, k=10000)),
                 ('multinomialnb', MultinomialNB())])

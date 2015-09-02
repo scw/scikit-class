@@ -15,6 +15,11 @@ count_vect.fit(fixed_text)
 
 counts = count_vect.transform(fixed_text)
 
+# NB has a bunch of parameters -- somewhat scary for those who haven't
+# used it before. That said, Scikit-Learn mostly has sane defaults,
+# and usually it's not necessary to modify them. Can also try to
+# change a new algorithm, but usually it's not the best way to spend
+# your time.
 from sklearn.naive_bayes import MultinomialNB
 nb = MultinomialNB()
 nb.fit(counts, fixed_target)

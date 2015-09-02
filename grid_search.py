@@ -21,10 +21,12 @@ p = Pipeline(steps=[('counts', CountVectorizer()),
 
 from sklearn.grid_search import GridSearchCV
 
+# don't know exactly what the parameter values should be? we can use
+# a grid search to try out values within our parameter space
 parameters = {
     'counts__max_df': (0.5, 0.75, 1.0),
     'counts__min_df': (1, 2, 3),
-    'counts__ngram_range': ((1,1), (1,2)),
+    'counts__ngram_range': ((1,1), (1,2), (1,3)),
 #    'feature_selection__k': (1000, 10000, 100000)
     }
 
